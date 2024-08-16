@@ -72,6 +72,12 @@ export default class Pulse extends Component {
 
     mounted = true;
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.color !== this.props.color) {
+            this.setState({ color: this.props.color });
+        }
+    }
+
     componentDidMount(){
         const {numPulses, duration, speed} = this.state;
 
